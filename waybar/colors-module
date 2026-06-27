@@ -1,0 +1,7 @@
+{
+"custom/colors": {
+    // symbol: ◈
+    "format": "<span color='#AC4861'>🟆</span>",
+    "tooltip": false
+},
+}

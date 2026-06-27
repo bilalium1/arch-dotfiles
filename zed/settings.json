@@ -1,0 +1,106 @@
+{
+  "ui_font_size": 16.0,
+  "ui_font_family": "Noto Serif CJK HK",
+  "buffer_line_height": "standard",
+  "buffer_font_weight": 400.0,
+  "buffer_font_size": 13.0,
+  "collaboration_panel": {
+    "button": false
+  },
+  "zoomed_padding": true,
+  "active_pane_modifiers": {
+    "inactive_opacity": 0.8
+  },
+  "focus_follows_mouse": {
+    "enabled": false
+  },
+  "centered_layout": {
+    "right_padding": 0.1,
+    "left_padding": 0.15
+  },
+  "bottom_dock_layout": "contained",
+  "preview_tabs": {
+    "enable_preview_file_from_code_navigation": false,
+    "enable_preview_from_multibuffer": false,
+    "enable_preview_from_project_panel": false,
+    "enabled": false
+  },
+  "title_bar": {
+    "show_menus": false,
+    "show_user_picture": true,
+    "show_user_menu": true,
+    "show_sign_in": false,
+    "show_onboarding_banner": false,
+    "show_project_items": false,
+    "show_branch_name": false
+  },
+  "debugger": {
+    "save_breakpoints": true,
+    "button": false
+  },
+  "search": {
+    "button": false
+  },
+  "diagnostics": {
+    "button": false
+  },
+  "terminal": {
+    "button": false
+  },
+  "status_bar": {
+    "active_encoding_button": "disabled",
+    "cursor_position_button": false,
+    "active_language_button": false
+  },
+  "project_panel": {
+    "folder_icons": true,
+    "file_icons": true,
+    "button": false
+  },
+  "cli_default_open_behavior": "existing_window",
+  "agent": {
+    "button": false,
+    "default_height": 200.0,
+    "limit_content_width": false,
+    "flexible": false,
+    "dock": "right",
+    "default_model": {
+      "provider": "deepseek",
+      "model": "deepseek-v4-pro",
+      "enable_thinking": true,
+      "effort": "high"
+    },
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "vim_mode": false,
+  "base_keymap": "VSCode",
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+    "show": false,
+    "show_tab_bar_buttons": false
+  },
+  "minimap": {
+    "show": "never"
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "buffer_font_fallbacks": [
+    "monospace"
+  ],
+  "buffer_font_family": "Monaspace Krypton",
+  "agent_servers": {
+    "codex-acp": {
+      "type": "registry"
+    }
+  },
+  "icon_theme": "Catppuccin Mocha",
+  "theme": {
+    "mode": "dark",
+    "light": "Wallust Dark",
+    "dark": "Wallust Dark"
+  }
+}

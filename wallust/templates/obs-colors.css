@@ -1,0 +1,181 @@
+/* ─────────────────────────────
+   DARKER WALLUST PALETTE
+───────────────────────────── */
+:root {
+  --bg: {{background}};
+  --bg2: {{color0}};
+  --bg3: {{color8}};
+
+  --fg: {{foreground}};
+  --muted: {{color8}};
+
+  --accent: {{color4}};
+  --accent2: {{color5}};
+
+  --red: {{color1}};
+  --orange: {{color3}};
+  --yellow: {{color11}};
+  --green: {{color2}};
+  --cyan: {{color6}};
+  --purple: {{color5}};
+}
+
+/* ─────────────────────────────
+   GLOBAL
+───────────────────────────── */
+.theme-dark,
+.theme-dark .app-container {
+  background: var(--bg) !important;
+  color: var(--fg) !important;
+}
+
+.theme-dark * {
+  border: none !important;
+  outline: none !important;
+}
+
+/* ─────────────────────────────
+   WORKSPACE (darker panels)
+───────────────────────────── */
+.theme-dark .workspace,
+.theme-dark .workspace-split,
+.theme-dark .workspace-leaf {
+  background: var(--bg) !important;
+}
+
+.theme-dark .workspace-ribbon {
+  background: var(--bg2) !important;
+}
+
+/* ─────────────────────────────
+   SIDEBAR (more contrast but darker)
+───────────────────────────── */
+.theme-dark .nav-files-container {
+  background: var(--bg2) !important;
+}
+
+.theme-dark .nav-file-title,
+.theme-dark .nav-folder-title {
+  color: var(--fg);
+}
+
+.theme-dark .nav-file-title.is-active {
+  color: var(--accent);
+  background: var(--bg3);
+}
+
+/* ─────────────────────────────
+   TABS
+───────────────────────────── */
+.theme-dark .workspace-tab-header {
+  background: var(--bg2);
+  color: var(--muted);
+}
+
+.theme-dark .workspace-tab-header.is-active {
+  background: var(--bg);
+  color: var(--accent);
+}
+
+/* ─────────────────────────────
+   EDITOR (darker base + softer contrast)
+───────────────────────────── */
+.theme-dark .cm-editor {
+  background: var(--bg) !important;
+  color: var(--fg) !important;
+}
+
+.theme-dark .cm-scroller {
+  background: var(--bg) !important;
+}
+
+.theme-dark .cm-gutters {
+  background: var(--bg2) !important;
+  color: var(--muted);
+}
+
+.theme-dark .cm-activeLine {
+  background: var(--bg2) !important;
+}
+
+.theme-dark ::selection {
+  background: var(--bg3) !important;
+  color: var(--fg);
+}
+
+.theme-dark .cm-cursor {
+  border-left: 2px solid var(--accent) !important;
+}
+
+/* ─────────────────────────────
+   MARKDOWN
+───────────────────────────── */
+.theme-dark .markdown-preview-view {
+  background: var(--bg) !important;
+  color: var(--fg);
+}
+
+/* headings (slightly darker toned accents) */
+.theme-dark h1 { color: var(--orange); }
+.theme-dark h2 { color: var(--yellow); }
+.theme-dark h3 { color: var(--green); }
+.theme-dark h4 { color: var(--cyan); }
+.theme-dark h5 { color: var(--purple); }
+.theme-dark h6 { color: var(--muted); }
+
+/* links */
+.theme-dark a {
+  color: var(--accent);
+}
+
+/* blockquotes (darker, subtle) */
+.theme-dark blockquote {
+  border-left: 3px solid var(--accent);
+  background: var(--bg2);
+}
+
+/* lists */
+.theme-dark ul li::marker {
+  color: var(--accent);
+}
+
+/* ─────────────────────────────
+   CODE
+───────────────────────────── */
+.theme-dark code {
+  background: var(--bg2);
+  color: var(--fg);
+}
+
+.theme-dark pre {
+  background: var(--bg2);
+}
+
+/* syntax (slightly toned down brightness) */
+.theme-dark .cm-keyword { color: var(--red); }
+.theme-dark .cm-string { color: var(--yellow); }
+.theme-dark .cm-number { color: var(--orange); }
+.theme-dark .cm-comment { color: var(--muted); font-style: italic; }
+.theme-dark .cm-def { color: var(--accent); }
+.theme-dark .cm-variable { color: var(--fg); }
+
+/* ─────────────────────────────
+   UI
+───────────────────────────── */
+.theme-dark button {
+  background: var(--bg2);
+  color: var(--fg);
+}
+
+.theme-dark button:hover {
+  background: var(--bg3);
+}
+
+.theme-dark .status-bar {
+  background: var(--bg2);
+  color: var(--muted);
+}
+
+.theme-dark ::-webkit-scrollbar-thumb {
+  background: var(--bg3);
+}

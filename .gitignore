@@ -1,0 +1,28 @@
+#ignore everything
+*
+
+#allow folders
+!*/
+
+# allow these dotfolders
+!.gitignore
+!.git/
+
+#configs you want to track
+!hypr/
+!hypr/**
+
+!kitty/
+!kitty/**
+
+!waybar/
+!waybar/**
+
+!rofi/
+!rofi/**
+
+!zed/
+!zed/**
+
+!wallust/
+!wallust/**

@@ -1,0 +1,96 @@
+{
+  "name": "Wallust",
+  "author": "you",
+  "themes": [
+    {
+      "name": "Wallust Dark",
+      "appearance": "dark",
+      "style": {
+        /* ─── base ─── */
+        "background": "#181516",
+        "text": "#EFCED6",
+        "muted": "#9D7C84",
+        "border": "#444040",
+
+        /* ─── surfaces ─── */
+        "panel.background": "#444040",
+        "panel.focused_border": "#884152",
+        "pane.background": "#181516",
+        "scrollbar.thumb": "#9D7C84",
+
+        /* ─── editor ─── */
+        "editor.background": "#181516",
+        "editor.foreground": "#EFCED6",
+        "editor.gutter": "#444040",
+        "editor.line_number": "#9D7C84",
+        "editor.active_line_number": "#EFCED6",
+        "editor.current_line": "#444040",
+        "editor.selection": "#563039",
+        "editor.cursor": "#884152",
+        "editor.invisible": "#9D7C84",
+        "editor.wrap_guide": "#444040",
+
+        /* ─── search / highlights ─── */
+        "editor.search_match": "#803F4F",
+        "editor.search_match_background": "#803F4F",
+        "editor.highlighted_line": "#444040",
+
+        /* ─── diagnostics ─── */
+        "error": "#522F36",
+        "warning": "#803F4F",
+        "info": "#884152",
+        "hint": "#AC4861",
+
+        /* ─── git ─── */
+        "version_control.added": "#563039",
+        "version_control.modified": "#803F4F",
+        "version_control.deleted": "#522F36",
+
+        /* ─── terminal ─── */
+        "terminal.background": "#181516",
+        "terminal.foreground": "#EFCED6",
+        "terminal.ansi.black": "#444040",
+        "terminal.ansi.red": "#522F36",
+        "terminal.ansi.green": "#563039",
+        "terminal.ansi.yellow": "#803F4F",
+        "terminal.ansi.blue": "#884152",
+        "terminal.ansi.magenta": "#AC4861",
+        "terminal.ansi.cyan": "#AC4861",
+        "terminal.ansi.white": "#E0B1BC",
+        "terminal.ansi.bright_black": "#9D7C84",
+        "terminal.ansi.bright_red": "#5B323A",
+        "terminal.ansi.bright_green": "#60333D",
+        "terminal.ansi.bright_yellow": "#97475B",
+        "terminal.ansi.bright_blue": "#A24B60",
+        "terminal.ansi.bright_magenta": "#D24B6B",
+        "terminal.ansi.bright_cyan": "#D24B6B",
+        "terminal.ansi.bright_white": "#E0B1BC",
+
+        /* ─── syntax ─── */
+        "syntax": {
+          "attribute": { "color": "#AC4861" },
+          "boolean": { "color": "#803F4F" },
+          "character": { "color": "#563039" },
+          "comment": { "color": "#9D7C84", "font_style": "italic" },
+          "constant": { "color": "#803F4F" },
+          "constructor": { "color": "#AC4861" },
+          "function": { "color": "#AC4861" },
+          "keyword": { "color": "#522F36" },
+          "label": { "color": "#884152" },
+          "number": { "color": "#803F4F" },
+          "operator": { "color": "#EFCED6" },
+          "parameter": { "color": "#AC4861" },
+          "property": { "color": "#AC4861" },
+          "punctuation": { "color": "#EFCED6" },
+          "string": { "color": "#563039" },
+          "string.escape": { "color": "#522F36" },
+          "tag": { "color": "#522F36" },
+          "type": { "color": "#803F4F" },
+          "type.builtin": { "color": "#803F4F" },
+          "variable": { "color": "#EFCED6" },
+          "variable.builtin": { "color": "#884152" }
+        }
+      }
+    }
+  ]
+}
