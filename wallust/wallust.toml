@@ -62,3 +62,4 @@ vscodium = { template = 'vscode-colors.conf', target = "~/.vscode-oss/extensions
 bash = { template = 'bash-colors.sh', target = "~/.colors.sh"}
 zed = { template = 'zed-colors.json', target = "~/.config/zed/themes/wallust.json"}
 obsidian = { template = 'obs-colors.css', target = "~/docs/42C3-VLT/.obsidian/themes/Wallust/theme.css"}
+firefox = {template = 'fox-colors.css', target = "~/.config/mozilla/firefox/f2oim4s5.default-release/chrome/userChrome.css"}

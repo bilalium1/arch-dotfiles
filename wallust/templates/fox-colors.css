@@ -1,0 +1,95 @@
+:root {
+  /* wallust mapping */
+  --bg: {{background}};
+  --fg: {{foreground}};
+
+  --surface: {{color0}};
+  --muted: {{color8}};
+
+  --accent: {{color4}};
+  --accent2: {{color6}};
+
+  --red: {{color1}};
+  --yellow: {{color3}};
+  --green: {{color2}};
+}
+
+/* ─── main UI ─── */
+#navigator-toolbox {
+  background: var(--surface) !important;
+  border-bottom: 1px solid var(--muted) !important;
+}
+
+#browser {
+  background: var(--bg) !important;
+}
+
+/* ─── tabs ─── */
+.tabbrowser-tab {
+  color: var(--muted) !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+  background: var(--bg) !important;
+  color: var(--fg) !important;
+  border-bottom: 2px solid var(--accent) !important;
+}
+
+.tabbrowser-tab:hover {
+  background: var(--surface) !important;
+}
+
+/* ─── url bar ─── */
+#urlbar {
+  background: var(--bg) !important;
+  color: var(--fg) !important;
+  border: 1px solid var(--muted) !important;
+}
+
+#urlbar:focus-within {
+  border-color: var(--accent) !important;
+}
+
+/* ─── toolbar buttons ─── */
+.toolbarbutton-1 {
+  color: var(--muted) !important;
+}
+
+.toolbarbutton-1:hover {
+  background: var(--surface) !important;
+  color: var(--fg) !important;
+}
+
+/* ─── sidebar ─── */
+#sidebar-box {
+  background: var(--surface) !important;
+  border-right: 1px solid var(--muted) !important;
+}
+
+/* ─── menus ─── */
+menupopup {
+  background: var(--surface) !important;
+  color: var(--fg) !important;
+}
+
+menuitem:hover {
+  background: var(--accent) !important;
+  color: var(--bg) !important;
+}
+
+/* ─── scrollbars ─── */
+* {
+  scrollbar-width: thin !important;
+  scrollbar-color: var(--muted) var(--bg) !important;
+}
+
+/* ─── find bar ─── */
+findbar {
+  background: var(--surface) !important;
+  border-top: 1px solid var(--muted) !important;
+}
+
+/* ─── status colors ─── */
+:root {
+  --lwt-toolbarbutton-icon-fill-attention: var(--yellow) !important;
+}

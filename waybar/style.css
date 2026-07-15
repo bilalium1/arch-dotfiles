@@ -1,96 +1,104 @@
 @import "style/wallust-colors.css";
 
 * {
-  color: @secondary;
-  font-family: "911 Porscha Condensed Italic";
-  border: none;
-  font-weight: 500;
-  min-height: 0px;
+    color: @secondary;
+    font-family: "911 Porscha Condensed Italic";
+    border: none;
+    font-weight: 500;
+    min-height: 0px;
 }
 
 window#waybar {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 #waybar > box {
-  box-shadow: inset 0 -5px 9px alpha(@primary, 0.5);
-  border-radius: 100px;
-  border: solid 1px;
-  border-color: alpha(@primary, 0.7);
-  margin: 0px 0px 0px 0px;
-  background: linear-gradient(135deg, alpha(@background, 0.7), alpha(@background, 0.3));
-  transition-property: background-color;
-  transition-duration: .5s;
-  min-height: 22px;
+    box-shadow: inset 0 -5px 9px alpha(@primary, 0.5);
+    border: solid 1px;
+    border-radius: 100px;
+    border-color: alpha(@primary, 0.7);
+    margin: 0px 0px 0px 0px;
+    background: linear-gradient(
+        135deg,
+        alpha(@background, 0.7),
+        alpha(@background, 0.3)
+    );
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    min-height: 22px;
 }
 
 .modules-left,
 .modules-right,
 .modules-center,
-
-.modules-left { margin-left: 2px; }
-.modules-right { margin-right: 2px; }
+.modules-left {
+    margin-left: 2px;
+}
+.modules-right {
+    margin-right: 2px;
+}
 
 #workspaces {
-  padding: 0;
-  margin: 0 0 0 10px;
-  padding-top: 0px;
+    border-radius: 100px;
+    padding: 0 12 0 12;
+    box-shadow: inset 0 -5px 5px alpha(@primary, 0.6);
+    margin: 4 4 4 5px;
+    padding-top: 0px;
 }
 
 #workspaces button {
-  all: initial;
-  font-size : 10px;
-  min-width: 0;
-  min-height: 0;
-  padding: 0 5px 0 5px;
-  margin: 0;
-  opacity: 0.65;
+    all: initial;
+    font-size: 10px;
+    min-width: 0;
+    min-height: 0;
+    padding: 0 5px 0 5px;
+    margin: 0;
+    opacity: 0.65;
 }
 
 #workspaces button.active {
-  color: @background;
-  opacity: 1.0;
-  background: linear-gradient(140deg, @primary 0%, alpha(@primary, 0));
-  font-size: 18px;
-  letter-spacing: -10px;
-  transition: all 0.5s ease-out;
+    color: @background;
+    opacity: 1;
+    font-size: 18px;
+    letter-spacing: -10px;
+    transition: all 0.5s ease-out;
 }
 
-#workspaces button.empty { opacity: 0.3; }
+#workspaces button.empty {
+    opacity: 0.3;
+}
 
 #workspaces button.empty.active {
-  color: @background;
-  opacity: 1;
+    color: @background;
+    opacity: 1;
 }
 
 #custom-omarchy {
-  padding-top: 5px;
-  font-size: 30px;
+    padding-top: 5px;
+    font-size: 30px;
 }
 
-#mpris
-{
-	font-family: "Monaspace Xenon";
-	font-size: 12px;
-	box-shadow: inset 0 -3px 5px alpha(@primary, 0.9);
-	margin : 4px;
-	border: solid 0px;
-	padding : 0 12px 0 12px;
-	border-radius : 100px;
+#mpris {
+    font-family: "Monaspace Xenon";
+    font-size: 12px;
+    box-shadow: inset 0 -3px 5px alpha(@primary, 0.9);
+    margin: 4px;
+    border: solid 0px;
+    padding: 0 12px 0 12px;
+    border-radius: 100px;
 }
 #tray,
 #cpu,
 #battery,
 #network,
 #bluetooth,
-#pulseaudio
-{
-	margin: 4px;
-	box-shadow: inset 0 -3px 5px alpha(@primary, 0.9);
-	font-size : 12px;
-	border-radius: 100px;
-	margin-right: 10px;
-	padding: 6px;
+#pulseaudio {
+    margin: 4px;
+    box-shadow: inset 0 -3px 5px alpha(@primary, 0.9);
+    font-size: 12px;
+    border-radius: 100px;
+    margin-right: 10px;
+    padding: 6px;
 }
 #idle_inhibitor,
 #backlight,
@@ -98,97 +106,110 @@ window#waybar {
 #custom-screenrecording-indicator,
 #custom-idle-indicator,
 #custom-expand-icon,
-#custom-omarchy
-#custom-weather,
+#custom-omarchy #custom-weather,
 #custom-updatespacman,
 #custom-update {
-  min-width: 10px;
-  font-size: 12px;
-  margin: 0 3px;
-  padding: 0 2px;
+    min-width: 10px;
+    font-size: 12px;
+    margin: 0 3px;
+    padding: 0 2px;
 }
 
-#custom-expand-icon { margin-right: 4px; }
+#custom-expand-icon {
+    margin-right: 4px;
+}
 
 tooltip {
-  padding: 4px;
-  background: @background;
-  border: 1px solid alpha(@secondary, 0.3);
-  border-radius: 8px;
-  box-shadow: 1px 1px 3px 1px #131313;
-  font-size: 12px;
+    padding: 4px;
+    background: @background;
+    border: 1px solid alpha(@secondary, 0.3);
+    border-radius: 8px;
+    box-shadow: 1px 1px 3px 1px #131313;
+    font-size: 12px;
 }
 
-tooltip label { color: @secondary; }
+tooltip label {
+    color: @secondary;
+}
 
 #custom-update {
-  padding-left: 0px;
-  padding-right: 4px;
+    padding-left: 0px;
+    padding-right: 4px;
 }
 
-.hidden { opacity: 0; }
+.hidden {
+    opacity: 0;
+}
 
 #custom-voxtype {
-  min-width: 12px;
-  margin: 0 0 0 2.5px;
+    min-width: 12px;
+    margin: 0 0 0 2.5px;
 }
 
-#custom-voxtype.recording { color: @red; }
+#custom-voxtype.recording {
+    color: @red;
+}
 
 #custom-idle-indicator,
 #custom-notification-silencing-indicator {
-  min-width: 12px;
-  margin: 0 3px;
-  font-size: 12px;
+    min-width: 12px;
+    margin: 0 3px;
+    font-size: 12px;
 }
 
 #custom-idle-indicator.active,
 #custom-notification-silencing-indicator.active {
-  color: @red;
+    color: @red;
 }
 
 #custom-screenrecording-indicator {
-  animation: blink-recording 0.5s linear infinite alternate;
-  color: transparent;
-  padding-right: 3px;
+    animation: blink-recording 0.5s linear infinite alternate;
+    color: transparent;
+    padding-right: 3px;
 }
 
 #custom-screenrecording-indicator.active {
-  color: @red;
+    color: @red;
 }
 
 @keyframes blink-recording {
-  to { color: @background; }
+    to {
+        color: @background;
+    }
 }
 
 #mpris {
-  padding-top: 2px;
-  margin-left: 8px;
-  color: alpha(@secondary, 0.95);
-  animation: blink 3s linear infinite alternate;
+    padding-top: 2px;
+    margin-left: 8px;
+    color: alpha(@secondary, 0.95);
+    animation: blink 3s linear infinite alternate;
 }
 
 @keyframes blink {
-  to { color: @overlay; }
+    to {
+        color: @overlay;
+    }
 }
 
 @keyframes blink-inhibitor {
-  to { color: @background; }
+    to {
+        color: @background;
+    }
 }
 
 #idle_inhibitor {
-  color: @secondary;
+    color: @secondary;
 }
 
 #idle_inhibitor.activated {
-  color: @teal;
-  animation: blink-inhibitor 1s linear infinite alternate;
+    color: @teal;
+    animation: blink-inhibitor 1s linear infinite alternate;
 }
 
-#clock
-{
-	font-family: "Elastik";
-	letter-spacing: -8px;
-	font-size: 22px;
-	padding-top: 4px;
+#clock {
+    text-shadow: 0 0 4px @primary;
+    font-family: "Elastik", "Elastik";
+    letter-spacing: 0px;
+    font-size: 20px;
+    padding: 5 0 0 0;
 }
