@@ -6,50 +6,67 @@
       "name": "Wallust Dark",
       "appearance": "dark",
       "style": {
-        /* ─── base ─── */
-        "background": "{{background}}",
+        /* ─── base & global borders ─── */
+        "background": "{{background}}a5",
         "text": "{{foreground}}",
         "muted": "{{color8}}",
-        "border": "{{color8}}",
-
-        /* ─── surfaces ─── */
-        "panel.background": "{{color0}}",
-        "panel.focused_border": "{{color4}}",
-        "pane.background": "{{background}}",
-        "scrollbar.thumb": "{{color8}}",
-
-        /* ─── editor ─── */
-        "editor.background": "{{background}}",
+        "border": null,
+        "border.variant": null,
+        "border.focused": null,
+        "border.selected": null,
+        "border.disabled": null,
+        /* ─── unified surfaces (panels, sidebars, popups) ─── */
+        "panel.background": "{{background}}a5",
+        "panel.focused_border": null,
+        "pane.background": "{{background}}a5",
+        "pane_group.border": null,
+        "element.background": "{{background}}a5",
+        "element.hover": "{{color0}}",
+        "element.active": "{{color0}}",
+        "ghost_element.background": "{{background}}a5",
+        "ghost_element.hover": "{{color0}}",
+        "ghost_element.active": "{{color0}}",
+        "drop_target.background": "{{background}}a5",
+        "scrollbar.thumb": null,
+        /* ─── statusbar & titlebar ─── */
+        "status_bar.background": "{{background}}a5",
+        "title_bar.background": "{{background}}a5",
+        "title_bar.inactive_background": "{{background}}a5",
+        "toolbar.background": "{{background}}a5",
+        /* ─── tabs & project panel (file tree) ─── */
+        "tab_bar.background": "{{background}}a5",
+        "tab.active_background": "{{background}}a5",
+        "tab.inactive_background": "{{background}}a5",
+        "project_panel.background": "{{background}}a5",
+        "outline_panel.background": "{{background}}a5",
+        /* ─── editor & gutter ─── */
+        "editor.background": "{{background}}55",
         "editor.foreground": "{{foreground}}",
-        "editor.gutter": "{{color0}}",
+        "editor.gutter": "{{background}}55",
         "editor.line_number": "{{color8}}",
         "editor.active_line_number": "{{color7}}",
-        "editor.current_line": "{{color0}}",
-        "editor.selection": "{{color4}}",
+        "editor.current_line": null,
+        "editor.selection": "{{color4}}40",
         "editor.cursor": "{{color4}}",
         "editor.invisible": "{{color8}}",
-        "editor.wrap_guide": "{{color0}}",
-
+        "editor.wrap_guide": null,
+        "editor.active_wrap_guide": null,
         /* ─── search / highlights ─── */
         "editor.search_match": "{{color0}}",
-        "editor.search_match_background": "{{color3}}",
-        "editor.highlighted_line": "{{color0}}",
-
+        "editor.search_match_background": "{{color3}}40",
+        "editor.highlighted_line": null,
         /* ─── diagnostics ─── */
         "error": "{{color1}}",
         "warning": "{{color3}}",
         "info": "{{color4}}",
         "hint": "{{color6}}",
-
         /* ─── git ─── */
         "version_control.added": "{{color2}}",
         "version_control.modified": "{{color4}}",
         "version_control.deleted": "{{color1}}",
-
         /* ─── terminal ─── */
-        "terminal.background": "{{background}}",
+        "terminal.background": "{{background}}12",
         "terminal.foreground": "{{foreground}}",
-
         "terminal.ansi.black": "{{color0}}",
         "terminal.ansi.red": "{{color1}}",
         "terminal.ansi.green": "{{color2}}",
@@ -58,7 +75,6 @@
         "terminal.ansi.magenta": "{{color5}}",
         "terminal.ansi.cyan": "{{color6}}",
         "terminal.ansi.white": "{{color7}}",
-
         "terminal.ansi.bright_black": "{{color8}}",
         "terminal.ansi.bright_red": "{{color9}}",
         "terminal.ansi.bright_green": "{{color10}}",
@@ -67,45 +83,33 @@
         "terminal.ansi.bright_magenta": "{{color13}}",
         "terminal.ansi.bright_cyan": "{{color14}}",
         "terminal.ansi.bright_white": "{{color15}}",
-
         /* ─── syntax ─── */
         "syntax": {
           "attribute": { "color": "{{color6}}" },
           "boolean": { "color": "{{color3}}" },
           "character": { "color": "{{color2}}" },
-
           "comment": {
             "color": "{{color8}}",
             "font_style": "italic"
           },
-
           "constant": { "color": "{{color3}}" },
           "constructor": { "color": "{{color5}}" },
           "function": { "color": "{{color5}}" },
-
           "keyword": {
             "color": "{{color1}}",
             "font_style": "bold"
           },
-
           "label": { "color": "{{color4}}" },
           "number": { "color": "{{color3}}" },
-
           "operator": { "color": "{{foreground}}" },
-
           "parameter": { "color": "{{color6}}" },
           "property": { "color": "{{color6}}" },
-
           "punctuation": { "color": "{{color8}}" },
-
           "string": { "color": "{{color2}}" },
           "string.escape": { "color": "{{color1}}" },
-
           "tag": { "color": "{{color1}}" },
-
           "type": { "color": "{{color4}}" },
           "type.builtin": { "color": "{{color4}}" },
-
           "variable": { "color": "{{foreground}}" },
           "variable.builtin": { "color": "{{color4}}" }
         }

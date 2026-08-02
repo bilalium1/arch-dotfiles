@@ -1,4 +1,5 @@
 {
+  "hard_tabs": true,
   "auto_signature_help": true,
   "ui_font_size": 16.0,
   "ui_font_family": "Noto Serif CJK HK",
@@ -94,6 +95,18 @@
   ],
   "buffer_font_family": "Monaspace Krypton",
   "agent_servers": {
+    "opencode": {
+      "favorite_config_option_values": {
+        "mode": [
+          "plan"
+        ]
+      },
+      "default_config_options": {
+        "mode": "plan",
+        "model": "opencode/big-pickle"
+      },
+      "type": "registry"
+    },
     "codex-acp": {
       "type": "registry"
     }

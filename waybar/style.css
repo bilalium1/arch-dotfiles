@@ -2,7 +2,7 @@
 
 * {
     color: @secondary;
-    font-family: "911 Porscha Condensed Italic";
+    font-family: "Fixedsys 62";
     border: none;
     font-weight: 500;
     min-height: 0px;
@@ -20,8 +20,8 @@ window#waybar {
     margin: 0px 0px 0px 0px;
     background: linear-gradient(
         135deg,
-        alpha(@background, 0.7),
-        alpha(@background, 0.3)
+        alpha(@background, 0.9),
+        alpha(@background, 0.6)
     );
     transition-property: background-color;
     transition-duration: 0.5s;
@@ -48,7 +48,7 @@ window#waybar {
 
 #workspaces button {
     all: initial;
-    font-size: 10px;
+    font-size: 16px;
     min-width: 0;
     min-height: 0;
     padding: 0 5px 0 5px;
@@ -207,7 +207,7 @@ tooltip label {
 }
 
 #clock {
-    text-shadow: 0 0 4px @primary;
+    text-shadow: 0 0 10px @secondary;
     font-family: "Elastik", "Elastik";
     letter-spacing: 0px;
     font-size: 20px;

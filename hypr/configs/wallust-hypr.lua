@@ -1,0 +1,19 @@
+$bg = 0F0E0Eff
+$fg = D8D5CEff
+
+$color0 = 3A3938ff
+$color1 = 483A2Bff
+$color2 = 4B3C2Dff
+$color3 = 705C38ff
+$color4 = 735E38ff
+$color5 = 736143ff
+$color6 = 826F48ff
+$color7 = C0BBB1ff
+$color8 = 86837Cff
+$color9 = 4E3D2Dff
+$color10 = 50412Fff
+$color11 = 82693Eff
+$color12 = 866C3Fff
+$color13 = 86724Cff
+$color14 = 917B4Bff
+$color15 = C0BBB1ff

@@ -246,7 +246,7 @@
     }
   },
   "mpris": {
-  "format": ">>{title}",
+  "format": "[ {title} ]",
   "format-paused": ">>{artist}",
   "max-length": 50,
   "ignored-players": ["firefox", "chromium", "brave"]

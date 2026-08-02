@@ -57,7 +57,8 @@ kitty = { template = 'kitty-colors.conf', target = '~/.config/kitty/themes/wallu
 rofi = { template = 'rofi-colors.conf', target = '~/.config/rofi/wallust-colors.rasi' }
 waybar = { template = 'waybar-colors.conf', target = '~/.config/waybar/style/wallust-colors.css'}
 colors_module = { template = 'ascii-colors.conf', target = "~/.config/waybar/colors-module" }
-hypr = { template = 'hypr-colors.conf', target = "~/.config/hypr/configs/wallust-hypr.conf" }
+hyprlua = { template = 'hypr-lua.conf', target = '~/.config/hypr/configs/wallust-hypr.lua' }
+hypr = { template = 'hypr-colors.conf', target = '~/.config/hypr/configs/wallust-hypr.conf' }
 vscodium = { template = 'vscode-colors.conf', target = "~/.vscode-oss/extensions/noctalia.noctaliatheme-0.0.5-universal/themes/MyTheme-color-theme.json" }
 bash = { template = 'bash-colors.sh', target = "~/.colors.sh"}
 zed = { template = 'zed-colors.json', target = "~/.config/zed/themes/wallust.json"}

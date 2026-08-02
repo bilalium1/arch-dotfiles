@@ -4,7 +4,7 @@
 @import "~/.config/rofi/wallust-colors.rasi"
 
 * {
-    font:   "Montserrat Medium 12";
+    font:   "FreeSerif HB 12";
 
     bg0:    #24242450;
     bg1:    @on-primary-fixed;
@@ -33,7 +33,7 @@ window {
 }
 
 inputbar {
-    font:       "Montserrat Light 20";
+    font:       "Makcasa 24";
     padding:    12px;
     spacing:    10px;
     children:   [ icon-search, entry ];
@@ -55,7 +55,7 @@ entry {
 	background-color: transparent;
     font:   inherit;
 
-    placeholder         : "SEARCH";
+    placeholder         : "Search";
     placeholder-color   : @fg1;
     text-color: @fg1;
 }
@@ -81,7 +81,7 @@ listview {
 }
 
 element {
-    border-radius :     5px;
+    border-radius :     199px;
     padding:            8px 16px;
     spacing:            30px;
     margin: 0 0 5px 5px;
