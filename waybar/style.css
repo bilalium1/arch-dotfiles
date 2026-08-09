@@ -207,9 +207,9 @@ tooltip label {
 }
 
 #clock {
-    text-shadow: 0 0 10px @secondary;
-    font-family: "Elastik", "Elastik";
-    letter-spacing: 0px;
-    font-size: 20px;
-    padding: 5 0 0 0;
+    text-shadow: 0 0 3px @secondary;
+    font-family: "U.S.A. Halftone", "Elastik";
+    letter-spacing: 5px;
+    font-size: 38px;
+    padding: 0 0 0 0;
 }

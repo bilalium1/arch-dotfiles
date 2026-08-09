@@ -1,14 +1,27 @@
-precision mediump float;
+#version 300 es
+precision highp float;
 
-varying vec2 v_texcoord;
+in vec2 v_texcoord;
 uniform sampler2D tex;
+out vec4 fragColor;
+
+// settings
+const float vignette_strength = 0.35;
+const float contrast = 1.1;
 
 void main() {
-    vec4 col = texture2D(tex, v_texcoord);
+    vec4 color = texture(tex, v_texcoord);
 
-    // scanline effect
-    float lines = sin(v_texcoord.y * 1000.0) * 0.03;
-    col.rgb -= lines;
+    // vignette
+    vec2 uv = v_texcoord * 2.0 - 1.0;
+    float dist = dot(uv, uv);
+    float vignette = 1.0 - dist * vignette_strength;
 
-    gl_FragColor = col;
+    // contrast
+    vec3 contrasted = (color.rgb - 0.5) * contrast + 0.5;
+
+    // final
+    vec3 finalColor = contrasted * vignette;
+
+    fragColor = vec4(finalColor, color.a);
 }

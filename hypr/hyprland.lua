@@ -55,9 +55,8 @@ hl.env("XDG_DOWNLOAD_DIR", "$HOME/downs")
 -- NOTE: this sourced file needs to be rewritten in Lua too (e.g. gtk-env.lua)
 -- before require() will work on it.
 -- require("configs.gtk-env")
-
-hl.env("XCURSOR_THEME", "Wii")
-hl.env("XCURSOR_SIZE", "23")
+-- hl.env("XCURSOR_THEME", "Wii Pointer")
+hl.env("XCURSOR_SIZE", "35")
 
 -----------------------
 ----- PERMISSIONS -----
