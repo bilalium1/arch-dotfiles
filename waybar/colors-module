@@ -1,7 +1,7 @@
 {
 "custom/colors": {
     // symbol: ◈
-    "format": "<span color='#57578B'>🟆</span>",
+    "format": "<span color='#416AA0'>🟆</span>",
     "tooltip": false
 },
 }

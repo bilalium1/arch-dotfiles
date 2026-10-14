@@ -3,7 +3,6 @@
 -- and https://wiki.hypr.land/Configuring/Basics/Dispatchers/
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
-local ipc = "qs -c noctalia-shell ipc call"
 
 -- NOTE: `terminal`, `fileManager`, `menu` are local variables defined in
 -- hyprland.lua (not exported by default). If this file is require()'d
@@ -33,14 +32,14 @@ hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo()) -- dwindle
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("~/.config/hypr/scripts/wbrestart.sh"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd('xdg-open "https://"')) -- default browser
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("~/.config/hypr/scripts/hyprlock.sh"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/wppicker.sh"))
-hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd("~/.config/hypr/scripts/KillActiveProcess.sh")) -- Kill active process
-hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("hyprpicker -a"))
-hl.bind(mainMod .. " + CTRL + B", hl.dsp.exec_cmd("~/.config/hypr/scripts/WaybarStyles.sh")) -- Waybar Styles Menu
-hl.bind(mainMod .. " + ALT + B", hl.dsp.exec_cmd("~/.config/hypr/scripts/WaybarLayout.sh")) -- Waybar Layout Menu
+hl.bind(mainMod .. " + CTRL + Q", hl.dsp.exec_cmd("~/.config/hypr/scripts/KillActiveProcess.sh")) -- Kill active process
+-- NOTE: hyprpicker is not installed, so this bind is disabled. Install it
+-- (`pacman -S hyprpicker`) and re-enable to use the color picker.
+-- hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("hyprpicker -a"))
 hl.bind(mainMod .. " + H", hl.dsp.exec_cmd("pkill -SIGUSR1 waybar")) -- Hide Waybar
 hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("kitty yazi")) -- Yazi File Manager
 
@@ -54,10 +53,6 @@ hl.bind("ALT + 3", hl.dsp.workspace.toggle_special("3"))
 hl.bind("ALT + 4", hl.dsp.workspace.toggle_special("4"))
 
 -- CHANGE WALLPAPER
--- NOTE: your original file binds mainMod+SHIFT+W here for wall_change.sh, but
--- mainMod+W is already bound above to wppicker.sh, and mainMod+SHIFT+Q is
--- already bound above to KillActiveProcess.sh — these lines are carried over
--- verbatim, but the duplicate/conflicting keys existed in your source file too.
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("~/.scripts/wall_change.sh 1"))
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd("~/.scripts/wall_change.sh 0"))
 
@@ -94,14 +89,6 @@ hl.bind(mainMod .. " + ALT + 2", hl.dsp.window.move({ workspace = "special:2" })
 hl.bind(mainMod .. " + ALT + 3", hl.dsp.window.move({ workspace = "special:3" }))
 hl.bind(mainMod .. " + ALT + 4", hl.dsp.window.move({ workspace = "special:4" }))
 
--- SCREENSHOT
--- NOTE: this duplicates the mainMod+SHIFT+S bind set above (screenshot.sh);
--- carried over verbatim from your source file, where the later `bind =` line
--- would take priority.
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd(
-    [[mkdir -p ~/Pictures/Screenshots && grim -g "$(slurp)" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot_$(date +'%Y%m%d_%H%M%S').png]]
-))
-
 -- Example special workspace (scratchpad)
 -- hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
 -- hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
@@ -114,44 +101,19 @@ hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
-hl.bind("SUPER + G", hl.dsp.exec_cmd("nwg-look; ~/.config/hypr/update-gtk-env.sh"))
+hl.bind("SUPER + G", hl.dsp.exec_cmd("nwg-look"))
 
--- Laptop multimedia keys for volume and LCD brightness (via noctalia ipc)
-hl.bind("XF86AudioRaiseVolume",   hl.dsp.exec_cmd(ipc .. " volume increase"),   { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume",   hl.dsp.exec_cmd(ipc .. " volume decrease"),   { locked = true, repeating = true })
-hl.bind("XF86AudioMute",          hl.dsp.exec_cmd(ipc .. " volume muteOutput"), { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute",       hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessUp",    hl.dsp.exec_cmd("~/.config/hypr/scripts/brightness.sh --inc"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown",  hl.dsp.exec_cmd("~/.config/hypr/scripts/brightness.sh --dec"), { locked = true, repeating = true })
-
--- Requires playerctl
-hl.bind("XF86AudioNext",  hl.dsp.exec_cmd(ipc .. " media next"),     { locked = true })
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd(ipc .. " media pause"),    { locked = true })
-hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd(ipc .. " media play"),     { locked = true })
-hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd(ipc .. " media previous"), { locked = true })
-
--- Volume (PipeWire / WirePlumber)
--- NOTE: these duplicate the ipc-based volume binds above — carried over
--- verbatim from your source file, where the later `bindel =` line would win.
+-- Laptop multimedia keys for volume and LCD brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { locked = true, repeating = true })
 hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true, repeating = true })
 hl.bind("XF86AudioMicMute",     hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true, repeating = true })
 
--- Brightness (brightnessctl)
-hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("brightnessctl set +10%"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 10%-"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("~/.config/hypr/scripts/brightness.sh --inc"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("~/.config/hypr/scripts/brightness.sh --dec"), { locked = true, repeating = true })
 
--- Media (playerctl)
+-- Requires playerctl
 hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),     { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl pause"),    { locked = true })
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play"),     { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"), { locked = true })
-
--- hl.bind("SUPER + D", hl.dsp.exec_cmd(ipc .. " launcher toggle"))
-hl.bind("SUPER + C", hl.dsp.exec_cmd(ipc .. " controlCenter toggle"))
-hl.bind("SUPER + S", hl.dsp.exec_cmd(ipc .. " settings toggle"))
-hl.bind("SUPER + L", hl.dsp.exec_cmd("hyprlock"))
-hl.bind("SUPER + N", hl.dsp.exec_cmd(ipc .. " notifications toggleHistory"))
-hl.bind("SUPER + W", hl.dsp.exec_cmd(ipc .. " wallpaper toggle"))
-hl.bind("SUPER + SHIFT + D", hl.dsp.exec_cmd(ipc .. " plugin:todo togglePanel"))

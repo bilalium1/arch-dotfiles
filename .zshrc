@@ -123,5 +123,5 @@ alias hyp='start-hyprland'
 
 bash ~/.scripts/display.sh
 
-export PATH=$PATH:/home/b11/.spicetify
-export PATH=$HOME:/.npm-global/bin:$PATH
+export PATH="$PATH:$HOME/.spicetify"
+export PATH="$HOME/.npm-global/bin:$PATH"

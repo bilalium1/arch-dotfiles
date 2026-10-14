@@ -1,8 +1,8 @@
 {
   "hard_tabs": true,
   "auto_signature_help": true,
-  "ui_font_size": 16.0,
-  "ui_font_family": "Noto Serif CJK HK",
+  "ui_font_size": 15.0,
+  "ui_font_family": "FreeSerif",
   "buffer_line_height": "standard",
   "buffer_font_weight": 400.0,
   "buffer_font_size": 13.0,
@@ -47,6 +47,7 @@
     "button": false
   },
   "terminal": {
+    "font_family": "Monaspace Xenon",
     "button": false
   },
   "status_bar": {
@@ -93,7 +94,7 @@
   "buffer_font_fallbacks": [
     "monospace"
   ],
-  "buffer_font_family": "Monaspace Krypton",
+  "buffer_font_family": "Monaspace Argon",
   "agent_servers": {
     "opencode": {
       "favorite_config_option_values": {
@@ -102,7 +103,8 @@
         ]
       },
       "default_config_options": {
-        "mode": "plan",
+        "effort": "medium",
+        "mode": "build",
         "model": "opencode/big-pickle"
       },
       "type": "registry"

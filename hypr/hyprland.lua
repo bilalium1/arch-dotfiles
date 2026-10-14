@@ -36,7 +36,7 @@ local menu        = "rofi -show drun"
 -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
 hl.on("hyprland.start", function()
     hl.exec_cmd("zen-browser")
-    hl.exec_cmd("bongocat")
+    -- hl.exec_cmd("bongocat") -- not installed
     hl.exec_cmd("waybar")
     hl.exec_cmd("awww-daemon")
     hl.exec_cmd("spotify-launcher")
@@ -101,23 +101,23 @@ end
 ---- LOOK AND FEEL ----
 -----------------------
 
--- NOTE: the wallust *template* still needs to be rewritten in Lua-output form
--- (done — see wallust-hypr.lua.template) and your wallust.toml `target` for
--- this entry updated to point at a .lua path, e.g.
--- ~/.config/hypr/configs/wallust-hypr.lua, so wallust writes Lua instead of
--- the old hyprlang syntax on every wallpaper change.
---local colors = require("configs.wallust-hypr")
+-- Wallust regenerates this module on every wallpaper change via the
+-- `hyprlua` entry in ~/.config/wallust/wallust.toml (template:
+-- wallust/templates/hypr-lua.conf -> configs/wallust-hypr.lua). Guarded with
+-- pcall so a missing or malformed palette can never break the whole config.
+local ok_colors, colors = pcall(require, "configs.wallust-hypr")
+local active_border = ok_colors and ("rgba(" .. colors.color4 .. ")") or "rgba(595959aa)"
 
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
     general = {
         gaps_in = 2,
-        gaps_out = 15,
+        gaps_out = 12,
 
         border_size = 1,
 
         col = {
-            active_border   = "rgba(595959aa)",
+            active_border   = active_border,
             inactive_border = "rgba(00000000)",
         },
 
@@ -133,7 +133,7 @@ hl.config({
     decoration = {
         -- screen_shader = "~/.config/hypr/shaders/scanline.glsl",
 
-        rounding = 4,
+        rounding = 5,
         rounding_power = 26,
 
         -- Change transparency of focused and unfocused windows
